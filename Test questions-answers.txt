@@ -1,0 +1,112 @@
+Week 2
+
+
+Striving for reward
+
+Reward design
+
+1. What is the function of reward?																	(1/1)
+	It defines the value of each (state, action, next state) triple
+	It tells agent what we want it to do
+2. What are the typical problems with optimization of return? 										(1/1)
+	The length of an episode can be infinite
+	Positive feedback loop problem
+	Sparse reward signal
+3. Which of those are correct ways to alter the reward function? 									(1/1)
+	Reshape the rewards - add state-potential shaping function to all of the rewards
+	Scale the reward signal - divide it by 10, for example
+4. What does the reward discounting means for the agent point of view?								(1/1)
+	It reduces the variance of the return estimator by decreasing the contribution of distant rewards.
+	It focuses agent's attention more on close rewards and reduce the value of distance ones.
+	
+
+Bellman equations
+
+Optimality in RL
+
+1. What are the main sources of randomness in Reinforcement Learning?																			(0/1)
+	Randomness of reward, given state and action.
+	Randomness of the action given state.
+	Randomness of the next state, given state and action
+2. What is the definition of value function v_pi(s) for policy π?																				(1/1)
+	Mean reward, that agent can get out from the environment, staring from state s and acting according to π.
+3. What is the definition of action-value function q_pi(s, a) for policy π?																		(1/1)
+	Mean reward, that agent can get out of the environment after making action a in state s and subsequently acting according to π
+4. How many deterministic optimal policies are there in a finite MDP?																			(1/1)
+	One or more.
+5. What from the list below allow to conclude an agent follows the optimal policy π*? Consider each option in isolation from others.			(0/1)
+
+	
+	
+1 - An agent acts in the way that allow it to come to a state s that has highest v_pi(s) for the current agent's policy п
+2 - Provided the first state s_0 is fixed, agent plays the policy п that achieves the maximum possible v_pi(s_0) across all possible policies.
+3 - In each state s an agent makes the action maximising the R(s, a, s')
+4 - In each state s agent makes the action that maximises the value function v_pi(s') of the next state s' for the current agent's policy π
+5 - In each state s an agent makes the action maximising the q_pi(s, a) for the current agent's policy π
+
+Tries
+
+10 -
+11 -
+12 -
+
+All variants: 0 - 1, 1 - 5, 2 - 10, 3 - 10, 4 - 5, 5 - 1
+variant		# of try
+null			9
+1
+2
+3				6
+4				3
+5				8
+12
+13
+14
+15
+23				1
+24
+25
+34				2
+35				7
+45
+123
+124
+125
+134
+135
+145
+234
+235
+245
+345				4
+1234
+1235
+1245
+1345			5
+2345
+12345
+
+
+
+Generalized Policy Iteration
+
+Policy Iteration
+
+1. What are the two main steps in value-based approach to Reinforcement Learning?																				
+	1 - build a value function.
+	2 - extract a policy function from the value function.
+2. What is true about policy improvement? Recall that, total return = immediate reward + the discounted expected return from the next state under policy π.		
+	An agent acts greedily with respect to combination of immediate reward and the expected return under policy π
+3. How many different value functions can correspond to any particular policy function?																			
+	One
+4. Why we don't need the precise solution of a system of Bellman equations?																						
+	After reaching some precision level further refinements of the solution will not change the result of subsequent policy improvement.
+5. Generalised Policy Iteration (GPI)
+	does not depend on initialization.
+	does not require to improve policy in each and every state as long as policy in any state is improved once in a while
+	converges to global optimum.
+	does not require to perform policy evaluation until its convergence
+6. How can we recover the optimal policy solely from q* function?																								
+	With argmax operator.
+7. What is the difference between Policy Iteration and Value Iteration?																							
+	Policy Iteration updates value function until numerical convergence of all its state values before each policy improvement step.
+	Value Iteration perform only one iteration of policy evaluation before policy improvement step.
