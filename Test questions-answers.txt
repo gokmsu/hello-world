@@ -34,56 +34,10 @@ Optimality in RL
 	Mean reward, that agent can get out of the environment after making action a in state s and subsequently acting according to π
 4. How many deterministic optimal policies are there in a finite MDP?																			(1/1)
 	One or more.
-5. What from the list below allow to conclude an agent follows the optimal policy π*? Consider each option in isolation from others.			(0/1)
+5. What from the list below allow to conclude an agent follows the optimal policy π*? Consider each option in isolation from others.			(1/1)
+	2 - Provided the first state s_0 is fixed, agent plays the policy п that achieves the maximum possible v_pi(s_0) across all possible 
 
-	
-	
-1 - An agent acts in the way that allow it to come to a state s that has highest v_pi(s) for the current agent's policy п
-2 - Provided the first state s_0 is fixed, agent plays the policy п that achieves the maximum possible v_pi(s_0) across all possible policies.
-3 - In each state s an agent makes the action maximising the R(s, a, s')
-4 - In each state s agent makes the action that maximises the value function v_pi(s') of the next state s' for the current agent's policy π
-5 - In each state s an agent makes the action maximising the q_pi(s, a) for the current agent's policy π
 
-Tries
-
-10 -
-11 -
-12 -
-
-All variants: 0 - 1, 1 - 5, 2 - 10, 3 - 10, 4 - 5, 5 - 1
-variant		# of try
-null			9
-1
-2
-3				6
-4				3
-5				8
-12
-13
-14
-15
-23				1
-24
-25
-34				2
-35				7
-45
-123
-124
-125
-134
-135
-145
-234
-235
-245
-345				4
-1234
-1235
-1245
-1345			5
-2345
-12345
 
 
 
